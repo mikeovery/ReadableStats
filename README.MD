@@ -6,5 +6,5 @@ Versa Clock Face
 
 
 ## Sample
-![alt text](https://github.com/mikeovery/ReadableStats/SS.png "My Config")
+![alt text](https://github.com/mikeovery/ReadableStats/raw/master/SS.png "Example Face")
 
