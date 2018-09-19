@@ -1,0 +1,22 @@
+{
+  "fitbit": {
+    "appUUID": "2eb3cc15-5444-40cd-a1eb-04e17e883cca",
+    "appType": "clockface",
+    "appDisplayName": "ReadableStats",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#607d8b",
+    "requestedPermissions": [
+      "access_heart_rate",
+      "access_activity",
+      "access_user_profile"
+    ],
+    "buildTargets": [
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "ReadableStats"
+      }
+    }
+  }
+}
