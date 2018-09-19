@@ -20,6 +20,13 @@
   text-anchor: start;
 }
 
+.clock-displayH {
+  font-family: Colfax-Bold;
+  fill: white;
+  font-size: 60;
+  text-anchor: end;
+}
+
 .clock-display1 {
   font-family: Colfax-Bold;
   fill: grey;

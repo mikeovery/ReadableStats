@@ -1,7 +1,7 @@
 <svg>
   
   <!-- Clock -->
-  <text id="clockTextH" class="clock-display" x="1%" y="57">00</text>
+  <text id="clockTextH" class="clock-displayH" x="25%" y="57">00</text>
   <text id="clockTextD1" class="clock-display1" x="26%" y="48">:</text>
   <text id="clockTextM" class="clock-display" x="29%" y="57">00</text>
   <text id="clockTextD2" class="clock-display1" x="54%" y="48">:</text>

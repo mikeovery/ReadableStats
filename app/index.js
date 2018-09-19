@@ -102,8 +102,6 @@ clock.ontick = evt => {
   let hours = today.getHours();
   let mins  = util.zeroPad(today.getMinutes());
   let secs  = util.zeroPad(today.getSeconds()); 
-  clockTextM.text = `${mins}`;
-  clockTextS.text = `${secs}`;
   
   if (preferences.clockDisplay == "12h"){
     if (hours > 12){
@@ -113,16 +111,18 @@ clock.ontick = evt => {
       clockTextP.text = 'am';
       hours += 12;
     }
-    clockTextH.text = `  ${hours}`;
   }
   else {
-    clockTextP.txt = '';
-    clockTextH.text = `${hours}`;
+    clockTextP.text = '';
   }
   
+  clockTextH.text = `${hours}`;
+  clockTextM.text = `${mins}`;
+  clockTextS.text = `${secs}`;
+
   let day      = today.getDate();
   let dow      = days[today.getDay()];
-  date.text = dow + ' ' + day;
+  date.text = dow + '  ' + day;
   
   battery.setLevel();
   
