@@ -103,17 +103,15 @@ clock.ontick = evt => {
   let mins  = util.zeroPad(today.getMinutes());
   let secs  = util.zeroPad(today.getSeconds()); 
   
-  if (preferences.clockDisplay == "12h"){
-    if (hours > 12){
-      clockTextP.text = 'pm';
-      hours -= 12;
-    }else if (hours == 0){
-      clockTextP.text = 'am';
-      hours += 12;
-    }
+  if (hours < 13) {
+    clockTextP.text = 'am';
   }
-  else {
-    clockTextP.text = '';
+  if (hours > 12) {
+    clockTextP.text = 'pm';
+    hours -= 12;
+  } else if (hours == 0) {
+    hours += 12;
+    clockTextP.text = 'am';
   }
   
   clockTextH.text = `${hours}`;

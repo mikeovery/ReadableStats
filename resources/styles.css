@@ -16,14 +16,14 @@
 .clock-display {
   font-family: Colfax-Bold;
   fill: white;
-  font-size: 60;
+  font-size: 55;
   text-anchor: start;
 }
 
 .clock-displayH {
   font-family: Colfax-Bold;
   fill: white;
-  font-size: 60;
+  font-size: 55;
   text-anchor: end;
 }
 
@@ -56,6 +56,7 @@
   font-family: Seville;
   fill: yellow;
   font-weight: bold;
+  font-size: 38;
   text-anchor: start;
   }
 
