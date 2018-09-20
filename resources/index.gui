@@ -2,9 +2,9 @@
   
   <!-- Clock -->
   <text id="clockTextH" class="clock-displayH" x="25%" y="57">00</text>
-  <text id="clockTextD1" class="clock-display1" x="26%" y="48">:</text>
-  <text id="clockTextM" class="clock-display" x="29%" y="57">00</text>
-  <text id="clockTextD2" class="clock-display1" x="54%" y="48">:</text>
+  <text id="clockTextD1" class="clock-display1" x="28%" y="48">:</text>
+  <text id="clockTextM" class="clock-displayM" x="42%" y="57">00</text>
+  <text id="clockTextD2" class="clock-display1" x="55%" y="48">:</text>
   <text id="clockTextS" class="clock-display" x="57%" y="57">00</text>
   <text id="clockTextP" class="clock-display2" x="84%" y="52"></text>
   <text id="date" class="baseSettings" x="1%" y="100" />
