@@ -1,16 +1,16 @@
 <svg>
   
   <!-- Clock -->
-  <text id="clockTextH" class="clock-displayH" x="65" y="57">10</text>
-  <text id="clockTextM" class="clock-displayM" x="110" y="57">00</text>
-  <text id="clockTextS" class="clock-displayS" x="155" y="57">00</text>
-  <text id="clockTextP" class="clock-display2" x="205" y="57"></text>
+  <text id="clockTextH" class="clock-displayH" x="75" y="57">10</text>
+  <text id="clockTextM" class="clock-displayM" x="130" y="57">00</text>
+  <text id="clockTextS" class="clock-displayS" x="185" y="57">00</text>
+  <text id="clockTextP" class="clock-display2" x="255" y="57"></text>
   <text id="date" class="baseSettings" x="1%" y="100" />
   
   <!--Heart Rate Data-->
   <g id="heartRate">
-    <image id="dataIcon" href="icons/heartIcon.png" width="28" height="28" x="260" y="45" fill="fb-red" />
-    <text id="hrm-data" class="baseSettings" x="270" y="97" />
+    <image id="dataIcon" href="icons/heartIcon.png" width="28" height="28" x="270" y="75" fill="fb-red" />
+    <text id="hrm-data" class="baseSettings" x="235" y="100" />
   </g>
   
   <!--

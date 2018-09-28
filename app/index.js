@@ -20,7 +20,7 @@ let date         = document.getElementById("date");
 let dataTypes     = [ "steps", "distance", "calories",
                       "elevationGain", "activeMinutes" ];
 let dataProgress  = [];
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let days = ["Sun", "Mon", "Tuey", "Wed", "Thu", "Fri", "Sat"];
 
 let getCurrentDataProgress = function(dataType) {
   let dataContainer = document.getElementById(dataType);
@@ -112,8 +112,10 @@ clock.ontick = evt => {
     clockTextP.text = 'am';
   }
   
+  /*
   clockTextH.text = `${hours}`;
   clockTextM.text = `${mins}`;
+  */
   clockTextS.text = `${secs}`;
 
   let day      = today.getDate();

@@ -25,21 +25,21 @@
 .clock-displayH {
   font-family: Colfax-Bold;
   fill: khaki;
-  font-size: 55;
+  font-size: 70;
   text-anchor: end;
 }
 
 .clock-displayM {
   font-family: Colfax-Bold;
   fill: white;
-  font-size: 55;
+  font-size: 70;
   text-anchor: middle;
 }
 
 .clock-displayS {
   font-family: Colfax-Bold;
   fill: linen;
-  font-size: 35;
+  font-size: 45;
   text-anchor: start;
 }
 
@@ -53,7 +53,7 @@
 .clock-display2 {
   font-family: Colfax-Bold;
   fill: lightgrey;
-  font-size: 20;
+  font-size: 30;
   text-anchor: start;
 }
 
@@ -80,5 +80,5 @@
   font-family: Seville-Bold;
   fill: orange;
   font-weight: bold;
-  font-size: 32;
+  font-size: 38;
   }
