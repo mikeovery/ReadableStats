@@ -11,6 +11,8 @@
 
 .smallFont {
   font-size: 28;
+  font-family: Seville-Bold;
+  fill: linen;
 }
 
 .clock-display {
@@ -22,7 +24,7 @@
 
 .clock-displayH {
   font-family: Colfax-Bold;
-  fill: white;
+  fill: khaki;
   font-size: 55;
   text-anchor: end;
 }
@@ -36,8 +38,8 @@
 
 .clock-displayS {
   font-family: Colfax-Bold;
-  fill: white;
-  font-size: 55;
+  fill: linen;
+  font-size: 35;
   text-anchor: start;
 }
 
@@ -51,7 +53,7 @@
 .clock-display2 {
   font-family: Colfax-Bold;
   fill: lightgrey;
-  font-size: 30;
+  font-size: 20;
   text-anchor: start;
 }
 
@@ -61,7 +63,7 @@
 
 #steps #dataCount {
   font-family: Seville;
-  font-size: 48;
+  font-size: 52;
   fill: lightblue;
   font-weight: bold;
   }
@@ -75,8 +77,8 @@
   }
 
 #heartRate #hrm-data {
-  font-family: Seville;
+  font-family: Seville-Bold;
   fill: orange;
   font-weight: bold;
-  font-size: 25;
+  font-size: 32;
   }

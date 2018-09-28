@@ -1,18 +1,16 @@
 <svg>
   
   <!-- Clock -->
-  <text id="clockTextH" class="clock-displayH" x="25%" y="57">00</text>
-  <text id="clockTextD1" class="clock-display1" x="28%" y="48">:</text>
-  <text id="clockTextM" class="clock-displayM" x="42%" y="57">00</text>
-  <text id="clockTextD2" class="clock-display1" x="55%" y="48">:</text>
-  <text id="clockTextS" class="clock-display" x="57%" y="57">00</text>
-  <text id="clockTextP" class="clock-display2" x="84%" y="52"></text>
+  <text id="clockTextH" class="clock-displayH" x="65" y="57">10</text>
+  <text id="clockTextM" class="clock-displayM" x="110" y="57">00</text>
+  <text id="clockTextS" class="clock-displayS" x="155" y="57">00</text>
+  <text id="clockTextP" class="clock-display2" x="205" y="57"></text>
   <text id="date" class="baseSettings" x="1%" y="100" />
   
   <!--Heart Rate Data-->
   <g id="heartRate">
-    <image id="dataIcon" href="icons/heartIcon.png" width="28" height="28" x="86%" y="43%" fill="fb-red" />
-    <text id="hrm-data" class="baseSettings" x="91%" y="59%" />
+    <image id="dataIcon" href="icons/heartIcon.png" width="28" height="28" x="260" y="45" fill="fb-red" />
+    <text id="hrm-data" class="baseSettings" x="270" y="97" />
   </g>
   
   <!--
@@ -20,7 +18,7 @@
   -->
   <!-- Battery Data -->
   <text id="batChrg" class="baseSettings smallFont" x="78%" y="100" />
-  <image x="86%" y="81" href="icons/battery.png" width="38" height="18">
+  <image x="86%" y="10" href="icons/battery.png" width="38" height="18">
     <rect id="batteryLevel" x="4" y="4" height="10" />
   </image>
  
@@ -30,7 +28,7 @@
     <arc id="arcBack" x="15" y="100%-180" width="65" height="65" fill="fb-extra-dark-gray" arc-width="5" start-angle="0" sweep-angle="360" />
     <arc id="arcFront" x="15" y="100%-180" width="65" height="65" arc-width="5" fill="lightblue" start-angle="0" sweep-angle="0" />
     <image id="dataIcon" href="icons/stepsOpen.png" width="32" height="32" x="32" y="100%-163" />
-    <text id="dataCount" class="baseSettings" x="170" y="167" />
+    <text id="dataCount" class="baseSettings" x="185" y="167" />
   </g>
   
   <line x1="5" x2="100%-5" y1="37%" y2="37%" fill="white" stroke-width="1" />

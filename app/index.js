@@ -14,8 +14,6 @@ let clockTextH   = document.getElementById("clockTextH");
 let clockTextM   = document.getElementById("clockTextM");
 let clockTextS   = document.getElementById("clockTextS");
 let clockTextP   = document.getElementById("clockTextP");
-let clockTextD1  = document.getElementById("clockTextD1");
-let clockTextD2  = document.getElementById("clockTextD2");
 clock.granularity = "seconds";
 let date         = document.getElementById("date");
 
