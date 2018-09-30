@@ -48,7 +48,7 @@ function refreshData(type) {
   
   let currentDataArc = (currentDataProg / currentDataGoal) * 360;
   
-  if (currentDataArc > 360) {
+  if (currentDataArc >= 360) {
     currentDataArc = 360;
     type.arcFront.style.fill = "lightgreen";
     type.arcFront.arcWidth = 5;
@@ -112,10 +112,8 @@ clock.ontick = evt => {
     clockTextP.text = 'am';
   }
   
-  /*
   clockTextH.text = `${hours}`;
   clockTextM.text = `${mins}`;
-  */
   clockTextS.text = `${secs}`;
 
   let day      = today.getDate();
