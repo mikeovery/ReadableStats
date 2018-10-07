@@ -1,7 +1,9 @@
 import document from "document";
 import { battery } from "power";
 
-const batData = document.getElementById("batteryLevel");
+const batDataR = document.getElementById("batteryLevelRed");
+const batDataA = document.getElementById("batteryLevelAmber");
+const batDataG = document.getElementById("batteryLevelGreen");
 const batChrg = document.getElementById("batChrg");
 
 function batteryLevelColor(percentage) {
@@ -15,9 +17,24 @@ function batteryLevelColor(percentage) {
   return batColor;
 }
 
+function batteryFill(percentage, maxval, minval, range, multiplier) {
+  let batFill = range;
+  if (percentage < maxval) {
+      batFill = ((percentage - minval) * multiplier) * range / 100;
+  }
+  return batFill;
+}
+
 export function setLevel() {
   let charge = Math.round(battery.chargeLevel);
-  batData.width = charge * 26 / 100;
-  batData.style.fill = batteryLevelColor(charge);
+  batDataR.width = batteryFill(charge, 25, 0, 6, 4);
+  batDataA.width = batteryFill(charge, 50, 25, 6, 4);
+  batDataG.width = batteryFill(charge, 100, 50, 14, 2);
+  
+  batDataR.style.fill = 'fb-red';
+  batDataA.style.fill = 'fb-peach';
+  batDataG.style.fill = 'fb-green';
+  
+  //batteryLevelColor(charge);
   //batChrg.text = `${charge}%`;
 }

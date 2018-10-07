@@ -24,7 +24,7 @@
 
 .clock-displayH {
   font-family: Colfax-Bold;
-  fill: khaki;
+  fill: white;
   font-size: 70;
   text-anchor: end;
 }
@@ -38,7 +38,7 @@
 
 .clock-displayS {
   font-family: Colfax-Bold;
-  fill: linen;
+  fill: khaki;
   font-size: 45;
   text-anchor: start;
 }
@@ -63,7 +63,7 @@
 
 #steps #dataCount {
   font-family: Seville;
-  font-size: 52;
+  font-size: 60;
   fill: lightblue;
   font-weight: bold;
   }
@@ -72,7 +72,7 @@
   font-family: Seville;
   fill: yellow;
   font-weight: bold;
-  font-size: 38;
+  font-size: 42;
   text-anchor: start;
   }
 
@@ -80,5 +80,5 @@
   font-family: Seville-Bold;
   fill: orange;
   font-weight: bold;
-  font-size: 38;
+  font-size: 48;
   }

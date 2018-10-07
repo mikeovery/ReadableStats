@@ -13,7 +13,9 @@ import { locale } from "user-settings";
 let clockTextH   = document.getElementById("clockTextH");
 let clockTextM   = document.getElementById("clockTextM");
 let clockTextS   = document.getElementById("clockTextS");
-let clockTextP   = document.getElementById("clockTextP");
+let amCircle   = document.getElementById("amCircle");
+let pmCircle   = document.getElementById("pmCircle");
+let stepProg   = document.getElementById("stepProg");
 clock.granularity = "seconds";
 let date         = document.getElementById("date");
 
@@ -48,45 +50,46 @@ function refreshData(type) {
   
   let currentDataArc = (currentDataProg / currentDataGoal) * 360;
   
-  if (currentDataArc >= 360) {
-    currentDataArc = 360;
-    type.arcFront.style.fill = "lightgreen";
-    type.arcFront.arcWidth = 5;
-  }
-  else {
-    if(currentType==="steps") {
-      type.arcFront.style.fill = "lightblue";
+  if(currentType!="steps") {
+    if (currentDataArc >= 360) {
+      currentDataArc = 360;
+      type.arcFront.style.fill = "lightgreen";
+      type.arcFront.arcWidth = 5;
     }
-    if(currentType==="distance") {
-      type.arcFront.style.fill = "green";    
+    else {
+      if(currentType==="distance") {
+        type.arcFront.style.fill = "green";    
+      }
+      if(currentType==="calories") {
+        type.arcFront.style.fill = "orange";    
+      }
+      if(currentType==="elevationGain") {
+        type.arcFront.style.fill = "red";    
+      }
+      if(currentType==="activeMinutes") {
+        type.arcFront.style.fill = "yellow";    
+      }
     }
-    if(currentType==="calories") {
-      type.arcFront.style.fill = "orange";    
-    }
-    if(currentType==="elevationGain") {
-      type.arcFront.style.fill = "red";    
-    }
-    if(currentType==="activeMinutes") {
-      type.arcFront.style.fill = "yellow";    
-    }
+    type.arcFront.sweepAngle = currentDataArc;
   }
   
   if(currentType==="distance") {
     currentDataProg = (currentDataProg * 0.000621371192).toFixed(2);
   }
   if(currentType==="steps") {
-    if (currentDataArc===360) {
-      type.dataCount.style.fill = "lightgreen";
+    if (currentDataProg >= currentDataGoal) {
       currentDataProg = currentDataProg - userActivity.goals[currentType];
       currentDataProg = `+${currentDataProg}`;
+      stepProg.width = 276;
+      stepProg.style.fill = "lightgreen";
     }
     else {
-      type.dataCount.style.fill = "lightblue";
+      stepProg.width = (currentDataProg / currentDataGoal) * 276;
+      stepProg.style.fill = "lightblue";
     }
+    type.dataCount.text = currentDataProg;
   }
   
-  type.arcFront.sweepAngle = currentDataArc;
-  type.dataCount.text = currentDataProg;
 }
 
 function refreshAllData() {
@@ -102,14 +105,17 @@ clock.ontick = evt => {
   let secs  = util.zeroPad(today.getSeconds()); 
   
   if (hours < 13) {
-    clockTextP.text = 'am';
+    amCircle.style.fill = 'yellow';
+    pmCircle.style.fill = 'black';
   }
   if (hours > 12) {
-    clockTextP.text = 'pm';
+    amCircle.style.fill = 'black';
+    pmCircle.style.fill = 'orangered';
     hours -= 12;
   } else if (hours == 0) {
     hours += 12;
-    clockTextP.text = 'am';
+    amCircle.style.fill = 'yellow';
+    pmCircle.style.fill = 'black';
   }
   
   clockTextH.text = `${hours}`;
