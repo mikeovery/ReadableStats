@@ -22,7 +22,7 @@ let date         = document.getElementById("date");
 let dataTypes     = [ "steps", "distance", "calories",
                       "elevationGain", "activeMinutes" ];
 let dataProgress  = [];
-let days = ["Sun", "Mon", "Tuey", "Wed", "Thu", "Fri", "Sat"];
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 let getCurrentDataProgress = function(dataType) {
   let dataContainer = document.getElementById(dataType);
@@ -82,10 +82,12 @@ function refreshData(type) {
       currentDataProg = `+${currentDataProg}`;
       stepProg.width = 276;
       stepProg.style.fill = "lightgreen";
+      type.dataCount.style.fill = "lightgreen";
     }
     else {
       stepProg.width = (currentDataProg / currentDataGoal) * 276;
       stepProg.style.fill = "lightblue";
+      type.dataCount.style.fill = "lightblue";
     }
     type.dataCount.text = currentDataProg;
   }
@@ -124,7 +126,7 @@ clock.ontick = evt => {
 
   let day      = today.getDate();
   let dow      = days[today.getDay()];
-  date.text = dow + '  ' + day;
+  date.text = dow + '   ' + day;
   
   battery.setLevel();
   
