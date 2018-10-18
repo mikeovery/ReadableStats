@@ -4,8 +4,8 @@
   <text id="clockTextH" class="clock-displayH" x="85" y="65">10</text>
   <text id="clockTextM" class="clock-displayM" x="150" y="65">00</text>
   <text id="clockTextS" class="clock-displayS" x="215" y="65">00</text>
-  <circle id="amCircle" cx="230" cy="13" r="5" fill="yellow"/>
-  <circle id="pmCircle" cx="255" cy="13" r="5" fill="orangered"/>
+  <circle id="amCircle" cx="10" cy="20" r="5" fill="yellow"/>
+  <circle id="pmCircle" cx="10" cy="52" r="5" fill="orangered"/>
   
   <text id="date" class="baseSettings" x="1%" y="110" />
   

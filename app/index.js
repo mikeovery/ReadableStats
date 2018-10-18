@@ -24,6 +24,10 @@ let dataTypes     = [ "steps", "distance", "calories",
 let dataProgress  = [];
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+let statItem = document.getElementById("distance");
+let curstat = "";
+let statidx = 0;
+
 let getCurrentDataProgress = function(dataType) {
   let dataContainer = document.getElementById(dataType);
   return {
@@ -49,7 +53,6 @@ function refreshData(type) {
   let currentDataGoal = userActivity.goals[currentType];
   
   let currentDataArc = (currentDataProg / currentDataGoal) * 360;
-  
   if(currentType!="steps") {
     if (currentDataArc >= 360) {
       currentDataArc = 360;
@@ -94,6 +97,34 @@ function refreshData(type) {
   
 }
 
+statItem.onclick = () => {
+  statidx++;
+  if (statidx == dataTypes.length) {
+    statidx = 0;
+  }
+  let currentData = dataTypes[statidx];
+  //console.log (currentData);
+  let dataContainer = document.getElementById("distance");
+  let myicon = dataContainer.getElementById("dataIcon");
+  if (currentData - "distance")
+  {
+    myicon.href = "icons/distOpen.png";
+  }
+  if (currentData - "calories")
+  {
+    myicon.href = "icons/calsOpen.png";
+  }
+  if (currentData - "elevationGain")
+  {
+    myicon.href = "icons/floorsOpen.png";
+  }
+  if (currentData - "activeMinutes")
+  {
+    myicon.href = "icons/amOpen.png";
+  }
+
+}
+
 function refreshAllData() {
   for(var i=0; i<dataTypes.length; i++) {
     refreshData(dataProgress[i]);
@@ -106,19 +137,15 @@ clock.ontick = evt => {
   let mins  = util.zeroPad(today.getMinutes());
   let secs  = util.zeroPad(today.getSeconds()); 
   
-  if (hours < 13) {
+  if (hours < 12) {
     amCircle.style.fill = 'yellow';
     pmCircle.style.fill = 'black';
-  }
-  if (hours > 12) {
+  } else {
     amCircle.style.fill = 'black';
     pmCircle.style.fill = 'orangered';
-    hours -= 12;
-  } else if (hours == 0) {
-    hours += 12;
-    amCircle.style.fill = 'yellow';
-    pmCircle.style.fill = 'black';
   }
+  if (hours > 12) {hours -= 12;}
+  if (hours == 0) {hours = 12;}
   
   clockTextH.text = `${hours}`;
   clockTextM.text = `${mins}`;
