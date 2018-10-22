@@ -27,14 +27,12 @@ function batteryFill(percentage, maxval, minval, range, multiplier) {
 
 export function setLevel() {
   let charge = Math.round(battery.chargeLevel);
-  batDataR.width = batteryFill(charge, 25, 0, 69, 4);
-  batDataA.width = batteryFill(charge, 50, 25, 69, 4);
-  batDataG.width = batteryFill(charge, 100, 50, 138, 2);
+  batDataR.width = batteryFill(charge, 10, 0, 28, 10);
+  batDataA.width = batteryFill(charge, 20, 10, 28, 10);
+  batDataG.width = batteryFill(charge, 99, 20, 220, 1.25);
   
   batDataR.style.fill = 'fb-red';
   batDataA.style.fill = 'fb-peach';
   batDataG.style.fill = 'fb-green';
   
-  //batteryLevelColor(charge);
-  //batChrg.text = `${charge}%`;
 }
