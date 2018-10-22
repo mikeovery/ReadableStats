@@ -43,6 +43,13 @@
   text-anchor: start;
 }
 
+.clock-display12h {
+  font-family: Colfax-Bold;
+  fill: linen;
+  font-size: 28;
+  text-anchor: start;
+}
+
 .clock-display1 {
   font-family: Colfax-Bold;
   fill: grey;

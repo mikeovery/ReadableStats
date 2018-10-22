@@ -1,12 +1,17 @@
 <svg>
   
   <!-- Clock -->
-  <text id="clockTextH" class="clock-displayH" x="85" y="65">10</text>
-  <text id="clockTextM" class="clock-displayM" x="150" y="65">00</text>
-  <text id="clockTextS" class="clock-displayS" x="215" y="65">00</text>
-  <circle id="amCircle" cx="10" cy="20" r="5" fill="yellow"/>
-  <circle id="pmCircle" cx="10" cy="52" r="5" fill="orangered"/>
+  <text id="clockTextH" class="clock-displayH" x="95" y="65">10</text>
+  <circle id="dot1" cx="103" cy="25" r="5" fill="white"/>
+  <circle id="dot2" cx="103" cy="45" r="5" fill="white"/>
+  <text id="clockTextM" class="clock-displayM" x="160" y="65">00</text>
+  <circle id="dot3" cx="218" cy="37" r="4" fill="khaki"/>
+  <circle id="dot4" cx="218" cy="55" r="4" fill="khaki"/>
+  <text id="clockTextS" class="clock-displayS" x="225" y="65">00</text>
+  <circle id="amCircle" cx="7" cy="20" r="5" fill="yellow"/>
+  <circle id="pmCircle" cx="7" cy="52" r="5" fill="orangered"/>
   
+  <!-- Date -->
   <text id="date" class="baseSettings" x="1%" y="110" />
   
   <!--Heart Rate Data-->
@@ -15,9 +20,7 @@
     <text id="hrm-data" class="baseSettings" x="225" y="110" />
   </g>
   
-  <!--
-  <line x1="105" x2="105" y1="5" y2="65%-5" fill="white" stroke-width="1" />
-  -->
+  <!-- Battery -->
   <rect id="battBox" x="10" y="123" class="item" fill="grey" width="280" height="10" />
   <rect id="battProgFill" x="12" y="125" class="item" fill="black" width="276" height="6" />
   <rect id="batteryLevelRed" x="12" y="125" height="6" />
@@ -27,14 +30,9 @@
   
   <!-- Steps -->
   <g id="steps">
-    <!--
-    <arc id="arcBack" x="15" y="100%-180" width="65" height="65" fill="fb-extra-dark-gray" arc-width="5" start-angle="0" sweep-angle="360" />
-    <arc id="arcFront" x="15" y="100%-180" width="65" height="65" arc-width="5" fill="lightblue" start-angle="0" sweep-angle="0" />
-    -->
     <image id="dataIcon" href="icons/stepsOpen.png" width="40" height="40" x="16" y="100%-55" />
     <text id="dataCount" class="baseSettings" x="170" y="286" />
   </g>
-    
   <rect id="stepBox" x="10" y="220" class="item" fill="grey" width="280" height="10" />
   <rect id="stepProgFill" x="12" y="222" class="item" fill="black" width="276" height="6" />
   <rect id="stepProg" x="12" y="222" class="item" fill="lightblue" width="206" height="6" />
@@ -66,4 +64,5 @@
     <arc id="arcFront" x="230" y="145" width="65" height="65" fill="yellow" arc-width="3" start-angle="0" sweep-angle="0" />
     <image id="dataIcon" href="icons/amOpen.png" width="32" height="32" x="247" y="164" />
   </g>
+  <rect id="clickbg" pointer-events="visible"/>
 </svg>

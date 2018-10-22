@@ -24,7 +24,7 @@ let dataTypes     = [ "steps", "distance", "calories",
 let dataProgress  = [];
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-let statItem = document.getElementById("distance");
+let statItem = document.getElementById("clickbg");
 let curstat = "";
 let statidx = 0;
 
@@ -97,7 +97,8 @@ function refreshData(type) {
   
 }
 
-statItem.onclick = () => {
+statItem.onclick = evt => {
+  console.log ("click");
   statidx++;
   if (statidx == dataTypes.length) {
     statidx = 0;
