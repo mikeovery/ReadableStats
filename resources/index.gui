@@ -1,15 +1,15 @@
 <svg>
   
   <!-- Clock -->
-  <text id="clockTextH" class="clock-displayH" x="95" y="65">10</text>
+  <text id="clockTextH" class="clock-displayH" x="51" y="65">10</text>
   <circle id="dot1" cx="103" cy="25" r="5" fill="white"/>
   <circle id="dot2" cx="103" cy="45" r="5" fill="white"/>
   <text id="clockTextM" class="clock-displayM" x="160" y="65">00</text>
   <circle id="dot3" cx="218" cy="37" r="4" fill="khaki"/>
   <circle id="dot4" cx="218" cy="55" r="4" fill="khaki"/>
   <text id="clockTextS" class="clock-displayS" x="225" y="65">00</text>
-  <circle id="amCircle" cx="7" cy="20" r="5" fill="yellow"/>
-  <circle id="pmCircle" cx="7" cy="52" r="5" fill="orangered"/>
+  <circle id="amCircle" cx="2" cy="20" r="5" fill="yellow"/>
+  <circle id="pmCircle" cx="2" cy="52" r="5" fill="orangered"/>
   
   <!-- Date -->
   <text id="date" class="baseSettings" x="1%" y="110" />
