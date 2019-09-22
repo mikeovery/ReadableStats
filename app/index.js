@@ -4,8 +4,8 @@ import userActivity from "user-activity";
 import { display } from "display";
 import { preferences } from "user-settings";
 import { HeartRateSensor } from "heart-rate";
-import * as battery from "battery";
-import * as heartMonitor from "hrm";
+import * as battery from "./battery";
+import * as heartMonitor from "./hrm";
 import * as util from "../common/utils";
 import { locale } from "user-settings";
 
@@ -15,7 +15,8 @@ let clockTextM   = document.getElementById("clockTextM");
 let clockTextS   = document.getElementById("clockTextS");
 let amCircle   = document.getElementById("amCircle");
 let pmCircle   = document.getElementById("pmCircle");
-let stepProg   = document.getElementById("stepProg");
+let stepProg1   = document.getElementById("stepProg1");
+let stepProg2   = document.getElementById("stepProg2");
 clock.granularity = "seconds";
 let date         = document.getElementById("date");
 
@@ -81,15 +82,30 @@ function refreshData(type) {
   }
   if(currentType==="steps") {
     if (currentDataProg >= currentDataGoal) {
-      currentDataProg = currentDataProg - userActivity.goals[currentType];
-      currentDataProg = `+${currentDataProg}`;
-      stepProg.width = 276;
-      stepProg.style.fill = "lightgreen";
-      type.dataCount.style.fill = "lightgreen";
+      if (currentDataProg >= (currentDataGoal * 2)) {
+        currentDataProg = currentDataProg - userActivity.goals[currentType];
+        currentDataProg = `+${currentDataProg}`;
+        stepProg1.width = 276;
+        stepProg2.width = 276;
+        stepProg1.style.fill = "lightgreen";
+        stepProg2.style.fill = "lightgreen";
+        type.dataCount.style.fill = "lightgreen";
+      }
+      else {
+        currentDataProg = currentDataProg - userActivity.goals[currentType];
+        currentDataProg = `+${currentDataProg}`;
+        stepProg1.width = 276;
+        stepProg2.width = (currentDataProg / currentDataGoal) * 276;
+        stepProg1.style.fill = "lightgreen";
+        stepProg2.style.fill = "lightblue";
+        type.dataCount.style.fill = "lightgreen";          
+      }
     }
     else {
-      stepProg.width = (currentDataProg / currentDataGoal) * 276;
-      stepProg.style.fill = "lightblue";
+      stepProg1.width = (currentDataProg / currentDataGoal) * 276;
+      stepProg1.style.fill = "lightblue";
+      stepProg2.width = (currentDataProg / currentDataGoal) * 276;
+      stepProg2.style.fill = "lightblue";
       type.dataCount.style.fill = "lightblue";
     }
     type.dataCount.text = currentDataProg;
