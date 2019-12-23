@@ -8,10 +8,12 @@
     "requestedPermissions": [
       "access_heart_rate",
       "access_activity",
-      "access_user_profile"
+      "access_user_profile",
+      "access_aod"
     ],
     "buildTargets": [
-      "meson"
+      "meson",
+      "mira"
     ],
     "i18n": {
       "en": {
@@ -21,6 +23,6 @@
     "defaultLanguage": "en-US"
   },
   "devDependencies": {
-    "@fitbit/sdk": "~3.1.0"
+    "@fitbit/sdk": "~4.1.0"
   }
 }

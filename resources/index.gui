@@ -5,29 +5,35 @@
   <circle id="dot1" cx="103" cy="25" r="5" fill="white"/>
   <circle id="dot2" cx="103" cy="45" r="5" fill="white"/>
   <text id="clockTextM" class="clock-displayM" x="160" y="65">00</text>
-  <circle id="dot3" cx="218" cy="37" r="4" fill="khaki"/>
-  <circle id="dot4" cx="218" cy="55" r="4" fill="khaki"/>
-  <text id="clockTextS" class="clock-displayS" x="225" y="65">00</text>
-  <circle id="amCircle" cx="2" cy="20" r="5" fill="yellow"/>
-  <circle id="pmCircle" cx="2" cy="52" r="5" fill="orangered"/>
   
   <!-- Date -->
   <text id="date" class="baseSettings" x="1%" y="110" />
   
-  <!--Heart Rate Data-->
-  <g id="heartRate">
-    <image id="dataIcon" href="icons/heartIcon.png" width="28" height="28" x="265" y="83" fill="fb-red" />
-    <text id="hrm-data" class="baseSettings" x="225" y="110" />
-  </g>
-  
   <!-- Battery -->
+  <g id="Batt">
   <rect id="battBox" x="10" y="123" class="item" fill="grey" width="280" height="10" />
   <rect id="battProgFill" x="12" y="125" class="item" fill="black" width="276" height="6" />
   <rect id="batteryLevelRed" x="12" y="125" height="6" />
   <rect id="batteryLevelAmber" x="40" y="125" height="6" />
   <rect id="batteryLevelGreen" x="68" y="125" height="6" />
- 
+  </g>
+  <g id="AOD" display="none">
+  <text id="batChrg" class="baseSettings" x="155" y="270"/>
+  </g>
   
+  <g id="Data">
+  <circle id="dot3" cx="218" cy="37" r="4" fill="khaki"/>
+  <circle id="dot4" cx="218" cy="55" r="4" fill="khaki"/>
+  <text id="clockTextS" class="clock-displayS" x="225" y="65">00</text>
+  <circle id="amCircle" cx="2" cy="20" r="5" fill="yellow"/>
+  <circle id="pmCircle" cx="2" cy="52" r="5" fill="orangered"/>
+
+  <!--Heart Rate Data-->
+  <g id="heartRate">
+    <image id="dataIcon" href="icons/heartIcon.png" width="28" height="28" x="265" y="83" fill="fb-red" />
+    <text id="hrm-data" class="baseSettings" x="225" y="110" />
+  </g> 
+
   <!-- Steps -->
   <g id="steps">
     <image id="dataIcon" href="icons/stepsOpen.png" width="40" height="40" x="16" y="100%-55" />
@@ -74,5 +80,5 @@
     <arc id="arcFront" x="230" y="145" width="65" height="65" fill="yellow" arc-width="3" start-angle="0" sweep-angle="0" />
     <image id="dataIcon" href="icons/amOpen.png" width="32" height="32" x="247" y="164" />
   </g>
-  <rect id="clickbg" pointer-events="visible"/>
+  </g>
 </svg>

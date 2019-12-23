@@ -8,6 +8,7 @@ import * as battery from "./battery";
 import * as heartMonitor from "./hrm";
 import * as util from "../common/utils";
 import { locale } from "user-settings";
+import { me } from "appbit";
 
 // Set up all necessary variables
 let clockTextH   = document.getElementById("clockTextH");
@@ -19,15 +20,46 @@ let stepProg1   = document.getElementById("stepProg1");
 let stepProg2   = document.getElementById("stepProg2");
 clock.granularity = "seconds";
 let date         = document.getElementById("date");
+let Batt         = document.getElementById("Batt");
+let Data         = document.getElementById("Data");
+let AOD          = document.getElementById("AOD");
 
 let dataTypes     = [ "steps", "distance", "calories",
                       "elevationGain", "activeMinutes" ];
 let dataProgress  = [];
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-let statItem = document.getElementById("clickbg");
 let curstat = "";
 let statidx = 0;
+
+if ( display.aodAvailable) {
+  if (display.aodEnabled) {
+    console.log(me.permissions.granted("access_aod"));
+    display.aodAllowed = true;  
+  }
+}
+
+display.addEventListener("change", () => {
+  console.log("aodActive: " + display.aodActive);
+   if (display.aodActive) {
+       console.log ("Always on Enabled")
+       Batt.style.display = "none";
+       Data.style.display = "none";
+       AOD.style.display = "inline";
+       clock.granularity = 'minutes';
+       date.style.fill = "white";
+       display.brightnessOverride = "dim";
+   } else {
+       console.log ("Always on Disabled")
+       Batt.style.display = "inline";
+       Data.style.display = "inline";
+       clock.granularity = "seconds";
+       display.brightnessOverride = "normal";
+       date.style.fill = "yellow";
+       AOD.style.display = "none";
+   }
+});
+
 
 let getCurrentDataProgress = function(dataType) {
   let dataContainer = document.getElementById(dataType);
@@ -49,9 +81,15 @@ for(var i=0; i < dataTypes.length; i++) {
 // Refresh data, all other logic is in separate files
 function refreshData(type) {
   let currentType = type.dataType;
+  let dataValid = 1;
   
   let currentDataProg = (userActivity.today.adjusted[currentType] || 0);
   let currentDataGoal = userActivity.goals[currentType];
+  if (currentDataGoal == undefined)
+  {
+    currentDataGoal = 1;
+    dataValid = 0;
+  }
   
   let currentDataArc = (currentDataProg / currentDataGoal) * 360;
   if(currentType!="steps") {
@@ -108,38 +146,17 @@ function refreshData(type) {
       stepProg2.style.fill = "lightblue";
       type.dataCount.style.fill = "lightblue";
     }
-    type.dataCount.text = currentDataProg;
+    
+    if (dataValid == 1)
+    {
+      type.dataCount.text = currentDataProg;
+    }
+    else
+    {
+      type.dataCount.text = "";
+    }
   }
   
-}
-
-statItem.onclick = evt => {
-  console.log ("click");
-  statidx++;
-  if (statidx == dataTypes.length) {
-    statidx = 0;
-  }
-  let currentData = dataTypes[statidx];
-  //console.log (currentData);
-  let dataContainer = document.getElementById("distance");
-  let myicon = dataContainer.getElementById("dataIcon");
-  if (currentData - "distance")
-  {
-    myicon.href = "icons/distOpen.png";
-  }
-  if (currentData - "calories")
-  {
-    myicon.href = "icons/calsOpen.png";
-  }
-  if (currentData - "elevationGain")
-  {
-    myicon.href = "icons/floorsOpen.png";
-  }
-  if (currentData - "activeMinutes")
-  {
-    myicon.href = "icons/amOpen.png";
-  }
-
 }
 
 function refreshAllData() {
@@ -174,7 +191,9 @@ clock.ontick = evt => {
   
   battery.setLevel();
   
-  refreshAllData();
+  if (display.aodActive == false) {
+    refreshAllData();
+  }
 }
 
 heartMonitor.initialize();
