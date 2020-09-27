@@ -1,4 +1,7 @@
 {
+  "devDependencies": {
+    "@fitbit/sdk": "~4.2.0"
+  },
   "fitbit": {
     "appUUID": "2eb3cc15-5444-40cd-a1eb-04e17e883cca",
     "appType": "clockface",
@@ -8,21 +11,18 @@
     "requestedPermissions": [
       "access_heart_rate",
       "access_activity",
-      "access_user_profile",
-      "access_aod"
+      "access_user_profile"
     ],
     "buildTargets": [
       "meson",
+      "gemini",
       "mira"
     ],
     "i18n": {
-      "en": {
+      "en-US": {
         "name": "ReadableStats"
       }
     },
     "defaultLanguage": "en-US"
-  },
-  "devDependencies": {
-    "@fitbit/sdk": "~4.1.0"
   }
 }

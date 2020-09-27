@@ -75,7 +75,7 @@
   </g>
   
   <!-- Active Minutes -->
-  <g id="activeMinutes" class="deviceData">
+  <g id="activeZoneMinutes" class="deviceData">
     <arc id="arcBack" x="230" y="145" width="65" height="65" fill="fb-extra-dark-gray" arc-width="3" start-angle="0" sweep-angle="360" />
     <arc id="arcFront" x="230" y="145" width="65" height="65" fill="yellow" arc-width="3" start-angle="0" sweep-angle="0" />
     <image id="dataIcon" href="icons/amOpen.png" width="32" height="32" x="247" y="164" />

@@ -25,7 +25,7 @@ let Data         = document.getElementById("Data");
 let AOD          = document.getElementById("AOD");
 
 let dataTypes     = [ "steps", "distance", "calories",
-                      "elevationGain", "activeMinutes" ];
+                      "elevationGain", "activeZoneMinutes" ];
 let dataProgress  = [];
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -85,6 +85,11 @@ function refreshData(type) {
   
   let currentDataProg = (userActivity.today.adjusted[currentType] || 0);
   let currentDataGoal = userActivity.goals[currentType];
+  if (currentDataGoal.total != undefined)
+  {
+    currentDataProg = currentDataProg.total
+    currentDataGoal = currentDataGoal.total
+  }
   if (currentDataGoal == undefined)
   {
     currentDataGoal = 1;
